@@ -17,14 +17,17 @@ def test_student_attributes():
     assert "Precalculus" in student.classes
 
 def test_add_class_to_student():
+    #Assert
     name = "Mariya"
     grade = "junior"
     classes = ["Python", "PhP"]
     student = Student(name, grade, classes)
-
     class_name = "Java"
+
+    #Act
     result = student.add_class(class_name)
 
+    #Assert
     assert len(classes) == 3
     assert class_name in student.classes
 

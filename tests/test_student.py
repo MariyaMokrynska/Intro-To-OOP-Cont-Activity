@@ -41,5 +41,12 @@ def test_non_existing_attribute_raise_exception():
     with pytest.raises(TypeError, match="Student.__init__\(\) takes 4 positional arguments but 5 were given"):
         Student(name, grade, classes, email)
  
+def test_passing_not_all_arg_raises_exception():
+    #Assert
+    name = "Mark"
+    grade = "junior"
+
+    with pytest.raises(TypeError, match="Student.__init__\(\) missing 1 required positional argument: 'classes'"):
+        Student(name, grade)
 
 
